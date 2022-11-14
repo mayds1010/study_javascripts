@@ -5,7 +5,7 @@ myName = "김다솜";
 myName = 5;
 console.log();
 
-//const declearation
+//const declaration
 const nickName = "홍길동";
 console.log(nickName);
 nickName = "김다솜"; //Error
