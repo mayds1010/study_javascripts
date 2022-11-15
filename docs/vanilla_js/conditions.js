@@ -10,11 +10,6 @@ if (20 < num) {
 } else {
   console.log(`done`); //20 > 5
 }
-//Termay operator 삼항연산자
-let conditon = 20 < num ? `20 < ${num}` : `done`;
-console.log();
-
-//맨 위에꺼
 //20 > num || 20 < num
 // true
 // (20 > num) || (20 < num)
@@ -36,3 +31,11 @@ console.log();
 // bool_true || bool_false
 // true
 //print!
+
+//Termay operator 삼항연산자
+let conditon = 20 < num ? `20 < ${num}` : `done`;
+console.log();
+// 20 > num || 20 < num
+// true
+// (20 > num) || (20 < num)
+// true
