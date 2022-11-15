@@ -35,6 +35,9 @@ console.log(`${animal}`);
 // animal.charAt(0) // charAt(0): 0번째 자리 출력
 // 't'
 // animal = animal.replace('ti','Ti') //  선언을 해줘야 저 위에 것도 바뀜(위에는 선언 안해서 바뀌지 x)
+// ‘Tiger’
+// animal.charAt(0) // 0번째 자리 출력
+// ‘T’
 // animal.split('g')
 // (2) ['Ti', 'er']
 // 0: 'Ti'
