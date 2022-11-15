@@ -43,5 +43,6 @@ let third = ["berry", "strawberry"];
 let mixins_list = [first, second, third];
 
 console.log();
-//mixins_list[1][1]
-//'melon'
+// mixins_list[1][1]
+// 'melon'
+// indexOf: 문자열 내에서 특정한 문자열의 index 값을 리턴한다.
