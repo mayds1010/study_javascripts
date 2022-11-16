@@ -28,7 +28,7 @@ console.log(`${statistics_obj.min} ${statistics_obj.max}`);
 //   process.platform === "linux" ? "/dev/stdin" : "docs/vanilla_js/input.txt";
 // let inputs = fs.readFileSync(filepath).toString().trim().split("\n");
 
-// let count = Number(inputs[0]);
+// let count = inputs[0];
 // let number = inputs[1].split(" ").map(Number);
 
 // let max = number[0];
