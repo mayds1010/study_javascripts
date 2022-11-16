@@ -9,4 +9,4 @@ function sum(items) {
 }
 let arr = [1, 2, 3, 4, 5, 6];
 console.log(`${sum(arr)}`);
-//21
+//답:21
