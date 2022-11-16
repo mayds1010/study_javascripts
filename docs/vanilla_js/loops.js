@@ -1,15 +1,20 @@
 //const animals = ["dog", "cat", "bird", "fish", "lizard"];
 
 //Normal방식
-//
+// for (let i = 2; i < animals.length; i++) {
+//   console.log(`${animals[i]}`);
+// }
+//dog
+//cat
 // bird
 // fish
 // lizard
 
 //for iterable 묶음에서 하나씩 뽑아내는 방식
-// for (let animal of animals) {
-//   console.log(`${animal}`);
-// }
+//for (let animal of animals) {
+//animal은 for문을 돌때마다 animals의 값을 담음
+//  console.log(`${animal}`);
+//}
 // typeof animal
 // 'string'
 
@@ -20,8 +25,9 @@
 // bird
 // fish
 // lizard
+
 // const animals_obj = [
-//   //animal,
+//   animal,
 //   { name: "cat", species: "feline" }, //오브젝트타입
 //   { name: "bird", species: "avian" },
 //   { name: "fish", species: "aquatic" },
@@ -40,3 +46,6 @@ for (let car of cars) {
   console.log(`${car}`); //cars[0]=index임
   cars[0];
 }
+// BMW
+// Volvo
+// Mini
