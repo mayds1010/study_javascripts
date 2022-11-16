@@ -32,8 +32,8 @@
 //   consol.log(`${animal["name"]}, ${animal["species"]}`);
 //   console.log();
 // }
-//예제
 
+//예제
 const cars = ["BMW", "Volvo", "Mini"]; //넘버타입안에 스트링
 for (let car of cars) {
   //()=파라메타
