@@ -62,6 +62,48 @@ let year = fs
   .split(" ")
   .map(Number); //System.in과 같은
 
-console.log(
-  year % 400 == 0 ? "1" : year % 4 == 0 && year % 100 != 0 ? "1" : "0"
-);
+// console.log(
+//   year % 400 == 0 ? "1" : year % 4 == 0 && year % 100 != 0 ? "1" : "0"
+// );
+
+//배열문제
+// let input = require("fs").readFileSync("/dev/stdin").toString().split("\n");
+
+// let count = Number(input[0]);
+// let number = input[1].split(" ").map(Number);
+
+// let max = number[0];
+// let min = number[0];
+
+// for (let i = 1; i < count; i++) {
+//   if (max < number[i]) {
+//     max = number[i];
+//   }
+
+//   if (min > number[i]) {
+//     min = number[i];
+//   }
+// }
+
+// console.log(`${min} ${max}`);
+//split 메서드를 사용하여 줄(\n)을 기준으로 입력값을 나누어줌
+
+//그 후 split 메서드를 한번 더 사용하여 공백(' ')을 기준으로 한번 더 나누어 줌
+let input = require("fs")
+  .readFileSync("/dev/stdin")
+  .toString()
+  .split("\n")
+  .map(Number);
+
+let max = input[0];
+let number = 0;
+
+for (let i = 1; i < 9; i++) {
+  if (max < input[i]) {
+    max = input[i];
+    number = i;
+  }
+}
+
+console.log(`${max}`);
+console.log(`${number + 1}`);
