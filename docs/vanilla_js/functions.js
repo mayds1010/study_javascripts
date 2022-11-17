@@ -55,4 +55,3 @@ function printRestParams(...args) {
 // arg :5
 // arg :6
 // arg :7
-//1,2,4,3,5
