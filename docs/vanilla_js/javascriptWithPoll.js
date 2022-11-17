@@ -10,11 +10,10 @@ let inputs = fs
   .map(Number);
 
 let survey = [
-  //questions
   {
     question: "해당 매장을 방문시 매장은 청결 하였습니까?",
     questions_uid: "Q1",
-    order: "1",
+    order: 1,
   },
   {
     question: "주문시 직원은 고객님께 친절 하였습니까?",
@@ -46,27 +45,32 @@ let answers = [
   { example_uid: "E5", example: "(5) 매우 그렇다", order: 5 },
 ];
 
-function survey_item(element) {
+let survey_item = (element) => {
+  //문항
   let question = survey[element]["order"] + ". " + survey[element]["question"];
   console.log(`${question}`);
-}
+};
 
 function answers_item(...args) {
-  let answer = (arg) => console.log(`${answers[arg]["example"]}`);
+  //답항
+  let answer = (arg) => {
+    console.log(`${answers[arg]["example"]}`);
+  };
   args.forEach(answer);
 }
 
 let user_answer_item = function user_answer(element) {
-  console.log(`답:  (${inputs[element]})`);
+  //답
+  console.log(`답: (${inputs[element]})`);
 };
 
 for (let i = 0; i < survey.length; i++) {
-  survey_item(i); // 질문
+  survey_item(i); // 문항반복출력
 
   switch (i) {
     case 0:
-      answers_item(0, 1, 2); //답항
-      user_answer_item(i); //대답
+      answers_item(0, 1, 2); //답항 출력
+      user_answer_item(i); //답 출력
       break;
 
     case 1:
@@ -92,14 +96,3 @@ for (let i = 0; i < survey.length; i++) {
 
   console.log(" ");
 }
-
-// console.log("-------------------설문자 선택--------------------");
-// for (i = 0; i < survey.length; i++) {
-//   survey_display(i); // 질문
-
-//   let answer_value = inputs[i] - 1; //인덱스값은 번호보다 1 적으니까 -1   // 답변
-//   console.log(`${answers[answer_value]["example"]}`);
-//   console.log(" ");
-// }
-
-// console.log("이용해주셔서 감사합니다!");
