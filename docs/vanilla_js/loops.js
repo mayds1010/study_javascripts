@@ -40,12 +40,12 @@ for (let animal of animals_obj) {
 }
 
 //예제
-// const cars = ["BMW", "Volvo", "Mini"]; //넘버타입안에 스트링
-// for (let car of cars) {
-//   //()=파라메타
-//   console.log(`${car}`); //cars[0]=index임
-//   cars[0];
-// }
-// BMW
-// Volvo
-// Mini
+const cars = ["BMW", "Volvo", "Mini"]; //넘버타입안에 스트링
+for (let car of cars) {
+  //()=파라메타
+  console.log(`${car}`); //cars[0]=index임
+  cars[0];
+}
+BMW;
+Volvo;
+Mini;

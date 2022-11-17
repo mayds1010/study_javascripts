@@ -8,5 +8,8 @@ function sum(items) {
   return sum;
 }
 let arr = [1, 2, 3, 4, 5, 6];
-console.log(`${sum(arr)}`);
+//console.log((`${sum(arr)}`);) -방법1
+let result = sum(arr);
+console.log(`${result}`); //방법2
+
 //답:21
