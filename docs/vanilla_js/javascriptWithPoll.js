@@ -1,3 +1,4 @@
+// //input.txt에 답 저장되어 있음
 let fs = require("fs");
 const filepath =
   process.platform === "linux" ? "/dev/stdin" : "docs/vanilla_js/input.txt";
@@ -9,6 +10,7 @@ let inputs = fs
   .split("\n")
   .map(Number);
 
+// 문항,답항
 let survey = [
   {
     question: "해당 매장을 방문시 매장은 청결 하였습니까?",
@@ -44,30 +46,29 @@ let answers = [
   { example_uid: "E4", example: "(4) 그렇다", order: 4 },
   { example_uid: "E5", example: "(5) 매우 그렇다", order: 5 },
 ];
-
+//문항
 let survey_item = (element) => {
-  //문항
   let question = survey[element]["order"] + ". " + survey[element]["question"];
   console.log(`${question}`);
 };
-
+//답항
 function answers_item(...args) {
-  //답항
   let answer = (arg) => {
     console.log(`${answers[arg]["example"]}`);
   };
   args.forEach(answer);
 }
-
+//답
 let user_answer_item = function user_answer(element) {
-  //답
   console.log(`답: (${inputs[element]})`);
 };
 
 for (let i = 0; i < survey.length; i++) {
   survey_item(i); // 문항반복출력
 
-  switch (i) {
+  switch (
+    i //하드코딩으로 되도록 쓰지 않는게 좋음
+  ) {
     case 0:
       answers_item(0, 1, 2); //답항 출력
       user_answer_item(i); //답 출력
@@ -95,4 +96,5 @@ for (let i = 0; i < survey.length; i++) {
   }
 
   console.log(" ");
+  console.log();
 }

@@ -51,22 +51,22 @@
 // Mini;
 
 //car
-cars.forEach((car) => {
-  console.log(`${car}`);
-});
+// cars.forEach((car) => {
+//   console.log(`${car}`);
+// });
 
-//forEach
+//forEach = for iterable
 const array1 = ["a", "b", "c"];
+//방법1
+array1.forEach((element, i) => console.log(element));
 
-array1.forEach((element) => console.log(element));
-
-//Arrow Runction 이렇게 사용하는게 더 편함
-let arrowFunction = (element) => {
-  console.log(element); //scope
+//방법2 Arrow Runction 이렇게 사용하는게 더 편함
+let arrowFunction = (element, index) => {
+  console.log(`${element} , index ${index}`); //scope
 };
 array1.forEach(arrowFunction);
 
-//Normal Function
+//방법3 Normal Function
 function normalFunction(element) {
   console.log(element);
 }
