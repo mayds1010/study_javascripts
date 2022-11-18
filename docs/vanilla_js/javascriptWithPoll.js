@@ -59,7 +59,7 @@ function answers_item(...args) {
   args.forEach(answer);
 }
 //답
-let user_answer_item = function user_answer(element) {
+let user_item = function user_answer(element) {
   console.log(`답: (${inputs[element]})`);
 };
 
@@ -71,27 +71,27 @@ for (let i = 0; i < survey.length; i++) {
   ) {
     case 0:
       answers_item(0, 1, 2); //답항 출력
-      user_answer_item(i); //답 출력
+      user_item(i); //답 출력
       break;
 
     case 1:
       answers_item(0, 1, 2, 3);
-      user_answer_item(i);
+      user_item(i);
       break;
 
     case 2:
       answers_item(0, 1);
-      user_answer_item(i);
+      user_item(i);
       break;
 
     case 3:
       answers_item(0, 1, 2, 3, 4);
-      user_answer_item(i);
+      user_item(i);
       break;
 
     case 4:
       answers_item(0, 1, 2);
-      user_answer_item(i);
+      user_item(i);
       break;
   }
 
