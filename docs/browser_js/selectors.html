@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h3>Selectors</h3>
+    <h3 id="selector">Selector with id</h3>
+    <script>
+      //elementById 대소문자 구분하고 elementsById라고 되어 있어 안됐음
+      let elementById = document.getElementById("selector");
+      console.log(`elementById: ${elementById}`);
+      elementById.innerHTML = "<b>Change selecter</b>";
+    </script>
+  </body>
+</html>
