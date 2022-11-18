@@ -48,7 +48,7 @@ for (let i = 0; i < surveys.length; i++) {
 }
 
 function surveys_item(i) {
-  console.log(`${surveys[i].question_num}. ${surveys[i].question}`); //"."+
+  console.log(`${surveys[i].question_num}. ${surveys[i].question}`);
 }
 function answer_item(answer) {
   if (answer == "E1 E2 E3") {
