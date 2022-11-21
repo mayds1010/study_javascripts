@@ -15,7 +15,7 @@ let item =
 item = ` <div class="item">${animal["name"]} : ${animal["age"]}</div>`; // 두개 같음(간단)
 queryApp.innerHTML = item;
 
-console.log("================과제==================");
+//================과제==================
 const productsData = [
   { title: "감자칩", weight: 300 },
   { title: "칙촉", weight: 100 },
