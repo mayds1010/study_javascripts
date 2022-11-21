@@ -26,20 +26,30 @@
 
     <a id="google" href="https://www.google.com">Google</a>
     <script>
-      let bodylists = document.querySelectorAll("body > *");
-      bodylists.forEach((bodylist, index) => {
-        console.log(bodylist);
-      }); //body내 모든 형제 출력
+      let querylist = document.querySelectorAll(".list");
+      querylist.forEach((list, index) => {
+        console.log(`${index} : ${list.outerHTML}`);
+        // querylist[0].querySelectorAll(".item")
+        let queryItems = list.querySelectorAll(".item");
+        queryItems.forEach((item, index) => {
+          console.log(`${index} : ${item.outerHTML}`); // . 다음은 다 펑션
+        });
+      }); //콘솔창에 입력:lists[0],lists[0].querySelectorAll(".item"),lists[0].querySelectorAll(".item")[0]
 
-      let lists = document.querySelectorAll(".list");
-      lists.forEach((list, index) => {
-        console.log(list);
+      //   let bodylists = document.querySelectorAll("body > *");
+      //   bodylists.forEach((bodylist, index) => {
+      //     console.log(bodylist);
+      //   }); //body내 모든 형제 출력
 
-        let items = list.querySelectorAll(".item");
-        items.forEach((item, index) => {
-          console.log(item);
-        }); //item 출력
-      }); //lists 출력
+      //   let lists = document.querySelectorAll(".list");
+      //   lists.forEach((list, index) => {
+      //     console.log(list);
+
+      //     let items = list.querySelectorAll(".item");
+      //     items.forEach((item, index) => {
+      //       console.log(item);
+      //     }); //item 출력
+      //   }); //lists 출력
     </script>
   </body>
 </html>
