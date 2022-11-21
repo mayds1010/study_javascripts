@@ -9,11 +9,36 @@
   <body>
     <h3>Selectors</h3>
     <h3 id="selector">Selector with id</h3>
+
+    <p id="title">DOM</p>
+    <button id="btn">Click Me</button>
+    <ul class="list">
+      <li class="item">Apple</li>
+      <li class="item">Azue</li>
+      <li class="item">Samsung</li>
+      <li class="item">IBM</li>
+    </ul>
+    <a id="google" href="https://www.google.com">Google</a>
+
     <script>
-      //elementById 대소문자 구분하고 elementsById라고 되어 있어 안됐음
-      let elementById = document.getElementById("selector");
-      console.log(`elementById: ${elementById}`);
-      elementById.innerHTML = "<b>Change selecter</b>";
+      let queryTitle = document.querySelector("#title");
+      queryTitle.innerHTML = "query Title";
+
+      let queryitems = document.querySelectorAll(".item");
+
+      let pByTagName = document.getElementsByTagName("p");
+      console.log(`${pByTagName}`);
+      // pByTagName.innerHTML = "클릭하세요!";
+
+      let listByClassName = document.getElementsByClassName("list"); //getElements(class이기에 복수형태)
+      console.log(`${listByClassName}`);
+
+      let titleById = document.getElementById("title"); //getElement(Id이기에 단수형태)
+      // titleById.innerHTML = "Title By Id";
+
+      let elementById = document.getElementById("selector"); //elementById 대소문자 구분하고 elementsById라고 되어 있어 안됐음
+      // console.log(`elementById: ${elementById}`);
+      //elementById.innerHTML = "<b>Change selecter</b>";
     </script>
   </body>
 </html>
