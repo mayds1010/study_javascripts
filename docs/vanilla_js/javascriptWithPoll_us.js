@@ -125,9 +125,7 @@ for (poll of polls) {
   //console.log(`${poll["questions_uid"]}`); // == polls[idx]
   let answer_uids = poll["answer_uids"];
   answer_uids.forEach((answer_uid, index) => {
-    // answers
     console.log(`${index + 1}. ${answer_uid}`);
   });
 }
-
 console.log();
