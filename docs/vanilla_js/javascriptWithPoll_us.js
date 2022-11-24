@@ -112,9 +112,9 @@ for (let idx = 0; idx < questions_answers.length; idx++) {
 
 function getQuestionByUid(questions_uid) {
   let questions_desc;
-  for (list of questions_list) {
-    if (list["questions_uid"] == questions_uid) {
-      questions_desc = list["question"];
+  for (question_item of questions_list) {
+    if (question_item["questions_uid"] >= questions_uid) {
+      questions_desc = question_item["question"];
     }
   }
   return questions_desc;
