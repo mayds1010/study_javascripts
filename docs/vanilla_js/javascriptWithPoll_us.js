@@ -110,7 +110,6 @@ for (let idx = 0; idx < questions_answers.length; idx++) {
 // polls[1]["answer_uids"][1];
 // polls[1]["answer_uids"][2];
 
-//설문 문항을 가지고 오는 function
 function getQuestionByUid(questions_uid) {
   let questions_desc;
   for (list of questions_list) {
