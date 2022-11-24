@@ -37,11 +37,9 @@ const answer_list = [
 const questions_answers = [
   { questions_uid: "Q1", answer_uid: "E1" },
   { questions_uid: "Q1", answer_uid: "E2" },
-  //   { questions_uid: "Q1", answer_uid: "E3" },
   { questions_uid: "Q2", answer_uid: "E1" },
   { questions_uid: "Q2", answer_uid: "E2" },
   { questions_uid: "Q2", answer_uid: "E3" },
-  //   { questions_uid: "Q2", answer_uid: "E4" },
   { questions_uid: "Q3", answer_uid: "E1" },
   { questions_uid: "Q3", answer_uid: "E2" },
   { questions_uid: "Q4", answer_uid: "E1" },
