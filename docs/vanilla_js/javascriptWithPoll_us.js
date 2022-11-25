@@ -192,7 +192,7 @@ queryPrev.addEventListener("click", setPollContentPrev);
 
 function setPollContentPrev() {
   if (index === 0) {
-    alert("첫 페이지입니다");
+    alert("첫 페이지 입니다");
     return;
   } else {
     let queryContent = document.querySelector("#poll-contents");
