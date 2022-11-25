@@ -65,7 +65,7 @@ const questions_answers = [
 //2차 방식:Array in [[Q1,E1,E2],[Q2,E1,E2,E3]...]
 //3차 방식:object in Array
 let polls = []; //전체 묶음[Q1,Q2,Q3,Q4,Q5]들어가 있어야 함
-let question_compare;
+let question_compare; //그냥 비교하는 값
 let questions = {}; // 내부 묶음
 let answer_uids = []; // 내부 설문 답변 묶음
 for (let idx = 0; idx < questions_answers.length; idx++) {
@@ -107,23 +107,106 @@ for (let idx = 0; idx < questions_answers.length; idx++) {
 // polls[1]["answer_uids"][0];
 // polls[1]["answer_uids"][1];
 // polls[1]["answer_uids"][2];
-
-function getQuestionByUid(questions_uid) {
-  let questions_desc;
-  for (question_item of questions_list) {
-    if (question_item["questions_uid"] >= questions_uid) {
-      questions_desc = question_item["question"];
+// 다른 방법
+// function getQuestionByUid(questions_uid) {
+//   let questions_desc;
+//   for (question_item of questions_list) {
+//     if (question_item["questions_uid"] >= questions_uid) {
+//       questions_desc = question_item["question"];
+//     }
+//   }
+//   return questions_desc;
+// }
+function getQuestionByUid(question_uid) {
+  // questions_uid = 'Q1'
+  let question_desc = "";
+  for (question of questions_list) {
+    if (question["questions_uid"] === question_uid) {
+      question_desc = question["question"];
+      break;
     }
   }
-  return questions_desc;
+  return question_desc;
+}
+
+function getAnswerByUid(answer_uid) {
+  let answer_desc = "";
+  for (answer of answer_list) {
+    if (answer["answer_uid"] === answer_uid) {
+      answer_desc = answer["answer"];
+      break;
+    }
+  }
+  return answer_desc;
 }
 
 for (poll of polls) {
-  console.log(`${getQuestionByUid(poll["questions_uid"])}`);
-  //console.log(`${poll["questions_uid"]}`); // == polls[idx]
+  let question_desc = getQuestionByUid(poll["questions_uid"]);
+  // console.log(`${poll["questions_uid"]}. ${question_desc}`); // == polls[idx]
   let answer_uids = poll["answer_uids"];
   answer_uids.forEach((answer_uid, index) => {
-    console.log(`${index + 1}. ${answer_uid}`);
+    // answers
+    // console.log(`${index + 1}. ${getAnswerByUid(answer_uid)}`);
   });
 }
-console.log();
+
+// Event handlers
+// Next 클릭 시 순서 있게 설문 표시
+// 대상 변수는 polls
+let queryNext = document.querySelector("#next");
+queryNext.addEventListener("click", setPollContentNext);
+
+//html과 연결하여 창에 문항,답항 보여지는
+let index = 0;
+function setPollContentNext() {
+  if (index === polls.length) {
+    alert("마지막 페이지 입니다");
+    return;
+  } else {
+    let queryContent = document.querySelector("#poll-contents");
+    // polls[0]["questions_uid"]; // 설문 문항
+    // polls[0]["answer_uids"]; // 설문 답항 묶음
+    // 1. 매장 상태가 좋은가요 ?
+    //  (1) 예
+    //  (2) 아니다.
+    // console.log(getQuestionByUid(polls[index]["questions_uid"]));
+    let desc = `<div>${index + 1}. ${getQuestionByUid(
+      polls[index]["questions_uid"]
+    )}</div>`;
+    polls[index]["answer_uids"].forEach((answer_uid, index) => {
+      // answers
+      // console.log(`${index + 1}. ${getAnswerByUid(answer_uid)}`);
+      desc =
+        desc +
+        `<div><input type = "radio" name = "answers" id = "id${index}" ><label for = "id${index}">(${
+          index + 1
+        }) ${getAnswerByUid(answer_uid)}</div>`;
+    });
+    queryContent.innerHTML = desc;
+    index++;
+  }
+}
+
+let queryPrev = document.querySelector("#prev");
+queryPrev.addEventListener("click", setPollContentPrev);
+
+function setPollContentPrev() {
+  if (index === 0) {
+    alert("첫 페이지입니다");
+    return;
+  } else {
+    let queryContent = document.querySelector("#poll-contents");
+    let desc = `<div>${index + 1}. ${getQuestionByUid(
+      polls[index]["questions_uid"]
+    )}</div>`;
+    polls[index]["answer_uids"].forEach((answer_uid, index) => {
+      desc =
+        desc +
+        `<div><input type = "radio" name = "answers" id = "id${index}" ><label for = "id${index}">(${
+          index + 1
+        }) ${getAnswerByUid(answer_uid)}</div>`;
+    });
+    queryContent.innerHTML = desc;
+    index--;
+  }
+}
