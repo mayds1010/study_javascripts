@@ -157,6 +157,7 @@ let queryNext = document.querySelector("#next");
 queryNext.addEventListener("click", setPollContentNext);
 
 let index = 0;
+
 function setPollContentNext() {
   if (index === polls.length) {
     alert("마지막 페이지 입니다");
@@ -195,10 +196,18 @@ function setPollContentPrev() {
     return;
   } else {
     let queryContent = document.querySelector("#poll-contents");
+    // polls[0]["questions_uid"]; // 설문 문항
+    // polls[0]["answer_uids"]; // 설문 답항 묶음
+    // 1. 매장 상태가 좋은가요 ?
+    //  (1) 예
+    //  (2) 아니다.
+    // console.log(getQuestionByUid(polls[index]["questions_uid"]));
     let desc = `<div>${index + 1}. ${getQuestionByUid(
       polls[index]["questions_uid"]
     )}</div>`;
     polls[index]["answer_uids"].forEach((answer_uid, index) => {
+      // answers
+      // console.log(`${index + 1}. ${getAnswerByUid(answer_uid)}`);
       desc =
         desc +
         `<div><input type = "radio" name = "answers" id = "id${index}" ><label for = "id${index}">(${
