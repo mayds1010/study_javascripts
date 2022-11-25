@@ -119,7 +119,7 @@ for (let idx = 0; idx < questions_answers.length; idx++) {
 // }
 function getQuestionByUid(question_uid) {
   // questions_uid = 'Q1'
-  let question_desc = "";
+  let question_desc = " ";
   for (question of questions_list) {
     if (question["questions_uid"] === question_uid) {
       question_desc = question["question"];
@@ -130,7 +130,7 @@ function getQuestionByUid(question_uid) {
 }
 
 function getAnswerByUid(answer_uid) {
-  let answer_desc = "";
+  let answer_desc = " ";
   for (answer of answer_list) {
     if (answer["answer_uid"] === answer_uid) {
       answer_desc = answer["answer"];
@@ -156,14 +156,13 @@ for (poll of polls) {
 let queryNext = document.querySelector("#next");
 queryNext.addEventListener("click", setPollContentNext);
 
-//html과 연결하여 창에 문항,답항 보여지는
 let index = 0;
 function setPollContentNext() {
   if (index === polls.length) {
     alert("마지막 페이지 입니다");
     return;
   } else {
-    let queryContent = document.querySelector("#poll-contents");
+    let queryContent = document.querySelector("#poll-contents"); //html과 연결하여 창에 문항,답항 보여지는
     // polls[0]["questions_uid"]; // 설문 문항
     // polls[0]["answer_uids"]; // 설문 답항 묶음
     // 1. 매장 상태가 좋은가요 ?
