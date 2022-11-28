@@ -1,0 +1,14 @@
+.container {
+  display: flex;
+}
+button {
+  width: 100%;
+  color: white;
+  background-color: green;
+}
+#removeshow {
+  padding: 0px 10px 0px 0px;
+}
+#hideshow {
+  padding: 0px 10px 0px 0px;
+}
