@@ -34,9 +34,6 @@ let newlist = () => {
 
 //좋아요,삭제
 querylistid.addEventListener("click", (event) => {
-  if (event.target.innerHTML == "delete") {
-    event.target.parentElement.parentElement.remove();
-  }
   if (event.target.innerHTML == "favorite_border") {
     event.target.innerHTML = "favorite";
     return;
@@ -44,5 +41,8 @@ querylistid.addEventListener("click", (event) => {
   if (event.target.innerHTML == "favorite") {
     event.target.innerHTML = "favorite_border";
     return;
+  }
+  if (event.target.innerHTML == "delete") {
+    event.target.parentElement.parentElement.remove();
   }
 });
