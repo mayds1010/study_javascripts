@@ -31,17 +31,15 @@ let newlist = () => {
     alert(`내용을 입력해주세요`);
   }
 };
-
-//좋아요,삭제
+//좋아요
 querylistid.addEventListener("click", (event) => {
   if (event.target.innerHTML == "favorite_border") {
     event.target.innerHTML = "favorite";
-    return;
-  }
-  if (event.target.innerHTML == "favorite") {
+  } else if (event.target.innerHTML == "favorite")
     event.target.innerHTML = "favorite_border";
-    return;
-  }
+});
+//삭제
+querylistid.addEventListener("click", (event) => {
   if (event.target.innerHTML == "delete") {
     event.target.parentElement.parentElement.remove();
   }
