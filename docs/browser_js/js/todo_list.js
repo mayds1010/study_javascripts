@@ -4,7 +4,7 @@ let querybtn = document.querySelector("#btn");
 
 //엔터키 누르면 추가
 queryinputid.addEventListener("keydown", ({ key, isComposing }) => {
-  //isComposing:한글두번씩 입력되는거 방지
+  //keydown: 키보드를 누를때 발생하는 이벤트,isComposing:한글두번씩 입력되는거 방지
   if (isComposing === "true") {
   }
   if (key == "Enter") {
@@ -31,16 +31,18 @@ let newlist = () => {
     alert(`내용을 입력해주세요`);
   }
 };
+
 //좋아요
 querylistid.addEventListener("click", (event) => {
   if (event.target.innerHTML == "favorite_border") {
-    event.target.innerHTML = "favorite";
+    //비워져 있는
+    event.target.innerHTML = "favorite"; //채워져 있는
   } else if (event.target.innerHTML == "favorite")
     event.target.innerHTML = "favorite_border";
 });
 //삭제
 querylistid.addEventListener("click", (event) => {
   if (event.target.innerHTML == "delete") {
-    event.target.parentElement.parentElement.remove();
+    event.target.parentElement.parentElement.remove(); //remove():요소삭제
   }
 });
