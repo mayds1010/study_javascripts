@@ -6,8 +6,7 @@ let querybtn = document.querySelector("#btn");
 queryinputid.addEventListener("keydown", ({ key, isComposing }) => {
   //keydown: 키보드를 누를때 발생하는 이벤트,isComposing:한글두번씩 입력되는거 방지
   if (isComposing === "true") {
-  }
-  if (key == "Enter") {
+  } else if (key == "Enter") {
     newlist();
   }
 });
