@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://code.jquery.com/jquery-3.6.3.min.js"
+      integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div>Ajax Return HellowController</div>
+    <button id="call_ajax">call ajax</button>
+    <h3>success</h3>
+    <div id="status">Status :</div>
+    <!-- success 뜸 -->
+    <div id="dataID">Datas :</div>
+    <!-- hello world ! ,object 뜸 -->
+    <hr />
+    <h3>error</h3>
+    <div id="error_status">Status :</div>
+    <!-- error -->
+    <div id="error_xhr">Xhr :</div>
+    <!-- object -->
+    <div id="error_dataID">Error :</div>
+    <!-- string -->
+    <hr />
+    <h3>complete</h3>
+    <div id="complete_status">Status :</div>
+    <hr />
+    <script>
+      //  $(document).ready(function(){ 두가지 중 하나 사용가능
+      $(function () {
+        $("#call_ajax").click(function () {
+          //create progress bar
+          $.ajax({
+            //request
+            url: "http://localhost:8080/api/v1/requestParamsWithDB",
+            type: "POST", //error일때 GET으로 일부러 에러냄
+            data: { currentPage: 1, pageScale: 10 },
+            success: function (data, status) {
+              $("#status").append(status);
+              // // $("#dataID").append(typeof data);
+              //하나하나 확인 표시
+              // $("#dataID").append(data.paginations.blockScale);
+              // $("#dataID").append(",");
+              // $("#dataID").append(data.resultList[1].NAME);
+              // $("#dataID").append(",");
+              //foreach문 data,callback
+              $.each(data.resultList, function (index, item /*item은Map*/) {
+                $("#dataID").append(
+                  "<div>" + index + "," + item.NAME + "</div>"
+                );
+              });
+            },
+            error: function (xhr, status, error) {
+              $("#error_status").append(status);
+              $("#error_xhr").append(typeof xhr);
+              $("#error_dataID").append(typeof error);
+            },
+            complete: function () {
+              //remove progress bar ,에러가 나면 프로그램 멈춰주는
+              $("#complete_status").append("Done!");
+            },
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
+<!--  -->
